@@ -54,7 +54,7 @@ The `cgol` command will call this code. You can play around with the arguments (
 
 In part 1, we utilized a separate thread. For this part, as is typical in scientific computation, we have a task based on a repeated pattern, namely, the per-cell logic of computing the next state.
 
-Due to the GIL, `step_parallel_threading()` does not provide the performance improvement one may expect. However, in Python 3.13, we can release the GIL. To see the difference, the `time` nox session is provided. If you are using `uv`, running nox from `uv` (`uv tool` or `uvx`) will allow `uv` to manage the different python versions for you. Alternatively, the `time-cgol` `workflow_dispatch` has been provided, if you wish to run it on Github's servers, instead.
+Due to the GIL, `step_parallel_threading()` does not provide the performance improvement one may expect. However, in Python 3.13, we can release the GIL. To see the difference, the `time` nox session is provided. If you have `uv`, running nox (including with `uv tool` or `uvx`) will allow `uv` to manage the different python versions for you. Alternatively, the `time-cgol` `workflow_dispatch` has been provided, if you wish to run it on GitHub's servers, instead.
 
 Your task is to implement `step_parallel()`, replacing the `raise NotImplementedError` line with a parallel implementation that works without running free-threaded Python (turning off the GIL). You are free to use `multiprocessing` or another approach (e.g. the interpreter pool). Should you wish, you may change the versions of python in `pyproject.toml` or `nox`.
 
