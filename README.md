@@ -12,7 +12,7 @@ Within CGOL, a cell is either alive or dead, and the following state is determin
 - If a cell is alive, then it will continue to live if it has two or three living neighbors. Otherwise, it will die.
 - If a cell is dead, then it will revive if it has exactly three living neighbors. Otherwise, it stays dead.
 
-Due to cellular automata being functional (as in functional programming), and the behavior for each cell is basically identical, we will use this as an environment to examine parallelism within Python. You will be modifying the code within `parallel_example/cgol.py`. There are two things of note within the file:
+Due to cellular automata being functional (as in functional programming), and the behavior for each cell is basically identical, we will use this as an environment to examine parallelism within Python. You will be modifying the code within `src/parallel_example/cgol.py`. There are two things of note within the file:
 
 - The `Conway` class stores all that is necessary for a game. Within it are the following methods:
   - `step()` performs a single step of CGOL. This takes the game state from `cells` and sets `cells_framebuffer` to the next state. The terminology borrows from computer graphics as memory that is written to before sending it to the display. In graphics, you want to completely render an image before displaying it on the monitor. Hence, it is typical to draw the next frame to a frame buffer while the previous frame is being displayed on the monitor. For our purposes, we do not want to modify the `cells` array in the middle of computing our next state. *This method has already been written for you.*

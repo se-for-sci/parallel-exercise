@@ -174,7 +174,6 @@ def run(return_statistics: bool = False):
 
     # defaults to 5 seconds:
     while (tframe := time.time()) - t0 < opts.runtime:
-
         # ==== main update loop ====
         conway.display(replace_prior=True, synthetic_delay=opts.synthetic_delay)
         if do_parallel:
